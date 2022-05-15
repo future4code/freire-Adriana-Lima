@@ -135,17 +135,38 @@ return igual
 // EXERCÍCIO 13
 function checaRenovacaoRG() {
   // implemente sua lógica aqui
+const anoAtual = Number(prompt("Qual o ano atual"))
+const anoNascimento = Number(prompt("qual o ano de nascimento"))
+const anoEmissao = Number(prompt("Qual ano de emissao do rg"))
 
+const idadePessoa = Number(anoAtual) - (anoNascimento)
+const idadeRg = Number(anoAtual) - (anoEmissao)
+
+const num1 = idadePessoa <= 20 && idadeRg >= 5
+const num2 = idadePessoa > 20 && idadePessoa <= 50 && idadeRg >= 10
+const num3 = idadePessoa > 50 && idadeRg >= 15
+
+console.log(num1 || num2 || num3)
 }
 
 // EXERCÍCIO 14
 function checaAnoBissexto(ano) {
   // implemente sua lógica aqui
+const bissexto1 = (ano % 4 == 0)
+const bissexto2 = (ano % 100 == 0)
+const bissexto3 = (ano % 400 == 0)
 
+return bissexto1&&bissexto2==bissexto3
 }
 
 // EXERCÍCIO 15
 function checaValidadeInscricaoLabenu() {
   // implemente sua lógica aqui
+const idade = prompt("tem mais de 18 anos?") 
+const ensinoMedio = prompt("tem ensino médio completo?") 
+const horario = prompt("tem disponibilidade de horários?")
 
+const resolucao = idade == "sim" && ensinoMedio == "sim" && horario == "sim"
+
+console.log(resolucao)
 }
