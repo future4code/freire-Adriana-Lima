@@ -182,15 +182,15 @@
 
 // 1 -
 
-const filme = prompt("Digite o genero do filme")
-const precoIngresso = Number(prompt("Digite o preco do ingresso"))
-const lanchinho = prompt("Digite o lanche que voce vai comprar")
+// const filme = prompt("Digite o genero do filme")
+// const precoIngresso = Number(prompt("Digite o preco do ingresso"))
+// const lanchinho = prompt("Digite o lanche que voce vai comprar")
 
-    if (filme === "fantasia" && precoIngresso <= 15) {
-        console.log(`Bom filme! aproveite o seu ${lanchinho}`)
-    } else  {
-        console.log("Escolha outro filme")
-    }
+//     if (filme === "fantasia" && precoIngresso <= 15) {
+//         console.log(`Bom filme! aproveite o seu ${lanchinho}`)
+//     } else  {
+//         console.log("Escolha outro filme")
+//     }
 
 
 
