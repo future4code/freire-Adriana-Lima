@@ -23,7 +23,8 @@
 
  // Resp: para os numeros impares.
 
-// 2. O código abaixo foi feito por uma pessoa desenvolvedora, contratada para automatizar algumas tarefas de um supermercado:
+// 2. O código abaixo foi feito por uma pessoa desenvolvedora, 
+//contratada para automatizar algumas tarefas de um supermercado:
     
 // let fruta = prompt("Escolha uma fruta")
 // let preco
@@ -54,7 +55,10 @@
 
 // Resp: O preço da fruta Maçã é R$ 2.25
 
-// c) Considere que um usuário queira comprar uma `Pêra`, qual seria a mensagem impressa no console se retirássemos o `break` que está logo acima do `default` (o `break` indicado pelo comentário "BREAK PARA O ITEM c.")?
+// c) Considere que um usuário queira comprar uma `Pêra`, qual seria a 
+// mensagem impressa no console se retirássemos o `break` que está logo 
+// acima do `default` (o `break` indicado pelo comentário 
+// "BREAK PARA O ITEM c.")?
  
 // resp: O preço da fruta Pêra é R$ 5
 
@@ -82,10 +86,14 @@
 
 // Exercícios de escrita de código
 
-// 1. Faça um programa que pergunta ao usuário qual a idade dele e imprima no console se ele/ela pode dirigir (apenas maiores de idade).
+// 1. Faça um programa que pergunta ao usuário qual a idade dele e 
+//imprima no console se ele/ela pode dirigir (apenas maiores de idade).
     //     a) Faça um `prompt` para receber a idade do usuário e guarde em uma variável.
     //     b) Garanta que essa variável é do tipo `Number`, você deve usar o cast para number para isso.
-    //     c) Agora veja se essa idade do usuário corresponde à idade mínima que permite dirigir. Se sim, imprima no console `"Você pode dirigir"`, caso contrário, imprima `"Você não pode dirigir."`
+    //     c) Agora veja se essa idade do usuário corresponde à idade 
+    // mínima que permite dirigir. Se sim, imprima no console 
+    // `"Você pode dirigir"`, caso contrário, imprima 
+    // `"Você não pode dirigir."`
 
 // const idade = Number(prompt("Digite a idade"))
 
@@ -96,12 +104,16 @@
 // }
 
 
-// 2. Agora faça um programa que verifica que turno do dia um aluno estuda. Peça para digitar **M** (matutino) ou **V** (Vespertino) ou **N** (Noturno). Imprima no console a mensagem "Bom Dia!", "Boa Tarde!" ou "Boa Noite!". Utilize o bloco `if/else`
+// 2. Agora faça um programa que verifica que turno do dia um aluno estuda. 
+// Peça para digitar **M** (matutino) ou **V** (Vespertino) ou **N** (Noturno). 
+// Imprima no console a mensagem "Bom Dia!", "Boa Tarde!" ou "Boa Noite!". 
+// Utilize o bloco `if/else`
 //     - 💡 Dica
         
 //         <aside>
-//         ⭐ Se o usuário digitar "V" no prompt, você deverá imprimir no console a mensagem `"Boa Tarde!"`
-//         Nesse caso, temos 3 resultados diferentes (Bom dia/Tarde/Noite)
+//         ⭐ Se o usuário digitar "V" no prompt, você deverá imprimir no 
+// console a mensagem `"Boa Tarde!"`Nesse caso, temos 3 resultados diferentes 
+// (Bom dia/Tarde/Noite)
         
 //         </aside>
         
@@ -126,11 +138,13 @@
 //     - 💡 Dica
         
 //         <aside>
-//         ⭐ Lembre-se que o switch case é como se fosse um if, mas ele verifica APENAS IGUALDADES ESTRITAS (`===`)
+//         ⭐ Lembre-se que o switch case é como se fosse um if, mas ele verifica APENAS IGUALDADES ESTRITAS 
+//(`===`)
         
 //         </aside>
 
-// const turnoAula = prompt("Qual o turno que o aluno estuda: M = Matutino, V = Vespertino, N = Noturno").toLowerCase()
+// const turnoAula = prompt("Qual o turno que o aluno estuda: M = Matutino, V = Vespertino, N = Noturno")
+// .toLowerCase()
 
 // switch (turnoAula) {
 //   case "m":
@@ -163,5 +177,20 @@
 //   } else {
 //     console.log("Escolha outro filme")
 //   }
+
+// Desafios
+
+// 1 -
+
+const filme = prompt("Digite o genero do filme")
+const precoIngresso = Number(prompt("Digite o preco do ingresso"))
+const lanchinho = prompt("Digite o lanche que voce vai comprar")
+
+    if (filme === "fantasia" && precoIngresso <= 15) {
+        console.log(`Bom filme! aproveite o seu ${lanchinho}`)
+    } else  {
+        console.log("Escolha outro filme")
+    }
+
 
 
