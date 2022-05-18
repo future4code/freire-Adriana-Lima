@@ -13,12 +13,12 @@
 
 // 2. Leia o código abaixo:
 
-const lista = [10, 11, 12, 15, 18, 19, 21, 23, 25, 27, 30]
-for (let numero of lista) {
-  if (numero > 18) {
-		console.log(numero)
-	}
-}
+// const lista = [10, 11, 12, 15, 18, 19, 21, 23, 25, 27, 30]
+// for (let numero of lista) {
+//   if (numero > 18) {
+// 		console.log(numero)
+// 	}
+// }
 
 // a) O que vai ser impresso no console?
 
@@ -44,3 +44,15 @@ for (let numero of lista) {
 //   console.log(linha)
 //   quantidadeAtual++
 // }
+
+// Seria impresso isso:
+// *
+// **
+// ***
+// ****
+
+// Exercícios de escrita de código
+
+// 1. Pergunte ao usuário quantos bichinhos de estimação ele tem e guarde 
+// esse dado em uma variável. 
+
