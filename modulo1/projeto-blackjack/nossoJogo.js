@@ -1,7 +1,7 @@
 
  // EXEMPLO DE UTILIZAÇÃO DA 'comprarCarta'
  
-    const carta = comprarCarta(); 
+   //  const carta = comprarCarta(); 
     // Sorteia uma carta. Por exemplo, o rei de ouros
     
     // console.log(carta.texto) 
@@ -51,18 +51,24 @@ const inicioDoJogo = confirm ("Quer jogar?")
 
 const cartaUsuario1 = comprarCarta()
 const cartaUsuario2 = comprarCarta()
-
-console.log(carta.texto)
-
+const somaValorUsuario = `${ cartaUsuario1.valor + cartaUsuario2.valor}`
+ 
 const cartaComputador1 = comprarCarta()
 const cartaComputador2 = comprarCarta()
+const somaValorComputador = `${cartaComputador1.valor + cartaComputador2.valor}`
 
-// const carta = comprarCarta(); 
-// Sorteia uma carta. Por exemplo, o rei de ouros
+if (inicioDoJogo){
+   console.log(`cartaUsuario: ${cartaUsuario1.texto} ${cartaUsuario2.texto} 
+   pontos: ${somaValorUsuario}`)
+   console.log(`cartaComputador: ${cartaComputador1.texto} ${cartaComputador2.texto}
+   pontos: ${somaValorComputador}`)
+}
 
-// console.log(carta.texto) 
-// imprime o texto da carta. Nesse caso: "K♦️"
-
-// console.log(carta.valor) 
-// imprime o valor da carta (um número). Nesse caso: 10)
-
+if (somaValorUsuario > somaValorComputador) {
+   console.log("O usuário ganhou!")
+ } else if (somaValorUsuario < somaValorComputador) {
+   console.log("O computador ganhou!")
+ } else {
+   console.log("Empate!")
+} 
+console.log("O jogo acabou")
