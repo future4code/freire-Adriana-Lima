@@ -1,5 +1,6 @@
 header {
     background-color:aquamarine;
+    border-radius: 0%;
 }
 
 h1 {
@@ -18,11 +19,12 @@ h2 {
 }
 
 .menu {
-    margin: 100px;
+    margin: 0 100px;
     text-align: center;
 }
 
 footer {
     margin: 300px 400px 0px 400px;
+    background-color: aqua;
 }
 
