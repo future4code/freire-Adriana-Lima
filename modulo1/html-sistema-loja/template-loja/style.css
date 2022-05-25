@@ -17,7 +17,12 @@ h2 {
     color: brown;
 }
 
+.menu {
+    margin: 100px;
+    text-align: center;
+}
+
 footer {
-    
+    margin: 300px 400px 0px 400px;
 }
 
