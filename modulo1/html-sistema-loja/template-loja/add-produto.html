@@ -5,10 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Adicionar Produto</title>
+    <link rel="stylesheet" href="../template-loja/style.css">
 </head>
 <body>
     <header>
-        <p>AL Eletrônicos</p>
+        <p style="text-align: center">AL Eletrônicos</p>
     </header>
     
     <nav>
@@ -20,26 +21,23 @@
 
     
     <h2>Adicionar Produto</h2>
-    <form action="">
+    <form action="#">
             <label for="link-foto">Link para foto: </label>
             <input type="url" id="link-foto" name="link-foto">
             <br>
      
             <label for="descricao">Descrição do produto: </label>
-            <!-- Adicione o id apropriado para o input abaixo -->
             <input type="text" id="descricao" name="descrição">
             <br>
+            
             <label for="preco">Preço (em R$): </label>
-            <!-- Adicione o id apropriado e o type para receber números abaixo -->
             <input type="number" id="preco" name="preço">
             <br>
 
-            <!-- Preencha as propriedades necessárias para os elementos abaixo -->
             <label for="quantidadeDisponivel">Quantidade disponível: </label>
             <input type="number" id="quantidadeDisponivel" name="quantidadeDisponivel">
 
             <br>
-            <!-- Adicione ao type do botão abaixo o valor para que ele submeta o formulário -->
             <button type="button">Adicionar</button>
 
     </form>

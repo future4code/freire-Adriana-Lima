@@ -1,0 +1,23 @@
+header {
+    background-color:aquamarine;
+}
+
+h1 {
+    color:black;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 35px;
+}
+
+.img-produto {
+    width: 100px;
+} 
+
+h2 {
+    text-align: center;
+    color: brown;
+}
+
+footer {
+    
+}
+
