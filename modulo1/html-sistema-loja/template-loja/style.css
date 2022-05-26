@@ -1,12 +1,15 @@
-header {
-    background-color:aquamarine;
-    border-radius: 0%;
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
 }
 
-h1 {
-    color:black;
-    font-family: 'Courier New', Courier, monospace;
-    font-size: 35px;
+header {
+    width: 100%;
+    background-color: aqua;
+    display: flex;
+    justify-content:space-around;
+    padding: 20px 0;
 }
 
 .img-produto {
@@ -14,17 +17,19 @@ h1 {
 } 
 
 h2 {
-    text-align: center;
     color: brown;
+    text-align: center;
 }
 
 .menu {
-    margin: 0 100px;
-    text-align: center;
+    display: inline-block;
+    margin: 10px 400px 70px 400px ;
 }
 
 footer {
-    margin: 300px 400px 0px 400px;
-    background-color: aqua;
+    margin: 400px 0px 0px 0px;
+    background-color:aqua;
+    text-align: center;
+    
 }
 
