@@ -17,18 +17,23 @@ header {
 
 /* ----------section---------------- */
 
+body {
+    text-align: center;
+   
+    
+}
+
 section {
     width: 100%;
     display: grid;
-    grid-template: 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
     padding: 15px;
 } 
 
 .telas {
     margin: 10px;
     border: 1px solid black;   
-    float: left;
-    width: 300px;
+    
 }
 
 .telas video {
@@ -41,11 +46,31 @@ section {
     text-align: center;
 }
 
+/* --------------video.html----------- */
+#video-8 {
+    
+    width: 80%;
+    text-align: center;
+    margin: 50px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+
+}
+
+#video-8 video {
+    width: 100%;
+}
+
+/* ------------footer--------- */
+
 footer {
-   position: relative;
+   position: fixed;
+   bottom: 0;
    background-color: #3d3d47;
    color: white;
    padding: 15px;
+   width: 100%;
    font-size: 20px;
    font-weight: bold;
    text-align: center;
