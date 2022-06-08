@@ -1,15 +1,17 @@
 .smallcard-container {
-    display: grid;
+    display: flex;
     align-items: center;
     border: 1px solid black;
     padding: 20px 10px;
     margin-bottom: 10px;
     height: 100px;
+   
 }
 
 .smallcard-container > img {
-    width: 30px;
+    width: 70px;
     margin-right: 10px;
     border-radius: 50%;
+    
 }
 
