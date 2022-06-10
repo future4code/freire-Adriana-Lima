@@ -70,13 +70,13 @@ class App extends React.Component {
             placeholder={"Nome do usuario"}
           />
 
-<input
+          <input
             value={this.state.valorInputFotoUsuario}
             onChange={this.onChangeInputFotoUsuario}
             placeholder={"Foto do usuario"}
           />
 
-<input
+          <input
             value={this.state.valorInputFotoPost}
             onChange={this.onChangeInputFotoPost}
             placeholder={"Foto do post"}
