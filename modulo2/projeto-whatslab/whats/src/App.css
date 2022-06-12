@@ -1,0 +1,56 @@
+.container {
+  background-image: url(./img/background.jpg);
+  width: 40vw;
+  min-height: 70vh;
+  border: 1px solid hotpink;
+  margin: 0 auto;
+  padding: 10px;
+
+
+}
+.elemento {
+  background-color: hotpink;
+  width: fit-content;
+  padding: 1px 10px;
+  border-radius: 10px;
+  margin-bottom: 5px;
+
+}
+
+.elemento p:first-child {
+  font-weight: bold;
+  
+}
+
+.elemento p:last-child {
+  margin-left: 10px;
+}
+
+.mensagem {
+  display: flex;
+  margin: 0 auto;
+  padding: 10px;
+  width: 40vw;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid hotpink;
+}
+
+.mensagem input {
+padding: 5px;
+border-color: pink;
+outline: none;
+  
+}
+
+.mensagem input:focus {
+  border-color: palevioletred;
+}
+
+button {
+  background-color: palevioletred;
+  border: 1px solid palevioletred;
+ 
+}
+
