@@ -7,17 +7,17 @@ class Etapa1 extends React.Component {
       <div className="Etapa1">    
         <h2> Etapa 1 - Dados Gerais</h2>
        <div>
-        <p>Qual o seu nome?</p>
+        <p> 1. Qual o seu nome? </p>
         <input value=""/>
       
-        <p>Qual a sua idade?</p>
+        <p> 2. Qual a sua idade? </p>
         <input value=""/>
 
-        <p>Qual o seu e-mail?</p>
+        <p> 3. Qual o seu e-mail? </p>
         <input value=""/>
 
         
-        <p>Qual a sua escolaridade?</p>
+        <p> 4. Qual a sua escolaridade? </p>
         <select className='escolaridade'>
         <input value=""/>
         <option value="">Ensino Médio Incompleto</option>
