@@ -39,10 +39,10 @@
 //           })}
 //         return (
 //           <div>
-//             <h1>Tela de Detalhes</h1>
-//             {usuario}
-    
-//             <hr />
+//             <button onClick={this.props.cadastrarUsuario}Cadastro de usuário</button>
+//             <h1>Lista de Usuários</h1>
+           
+            
 //             <button onClick={this.props.onClickCadastrar}>Trocar de Tela</button>
 //           </div>
 //         );
