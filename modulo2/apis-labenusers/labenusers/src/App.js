@@ -25,7 +25,7 @@ export default class App extends React.Component {
     this.setState({telaInicial: "cadastro"})
   };
 
-  ListaDeUsuarios = () => {
+  listaDeUsuarios = () => {
     this.setState({telaInicial: "lista"})
   };
  // 4
@@ -33,7 +33,9 @@ render() {
   
   return (
     <div>
-     {this.trocarTela}
+      
+     {this.trocarTela()}
+      
     </div>
   )
 }

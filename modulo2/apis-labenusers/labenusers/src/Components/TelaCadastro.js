@@ -16,8 +16,8 @@ export default class TelaCadastro extends React.Component {
     handleEmail = (event) => {
         this.setState({email: event.target.value })
     };
-   // 5
-    fazerCadastro = () => {
+   // 5 - requisição
+    createUser = () => {
       const url = "https://us-central1-labenu-apis.cloudfunctions.net/labenusers/users"
       const body = {
         name: this.state.name,
@@ -29,14 +29,14 @@ export default class TelaCadastro extends React.Component {
         }
       })
 
-      .then((resposta) => {
+      .then((response) => {
         alert("Usuário(a) cadastrado(a) com sucesso!")
             this.setState({nome: "", email: ""})
 
       })
 
-      .catch((erro) => {
-        lert(erro.response.data.message)
+      .catch((error) => {
+        alert(error.response.data.message)
       })
     }
 
@@ -44,7 +44,7 @@ export default class TelaCadastro extends React.Component {
     render() {
       return (
         <div>
-          <button onClick={this.props.listaDeUsuarios}>Lista de Usuários</button>
+          <button onClick={this.props.listaDeUsuarios}>Ir para lista de usuários</button>
           <h1>Cadastre-se</h1>
 
           <input
