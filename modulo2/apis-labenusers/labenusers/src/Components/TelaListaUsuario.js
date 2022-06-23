@@ -28,6 +28,7 @@ export default class TelaListaUsuario extends React.Component {
         //      }
         //   }
         //  );
+        //  request
         //    .then((response) => {
         //      //console.log(response.data.result.list);
         //     this.setState({usuarios: response.data.});
