@@ -1,51 +1,74 @@
 import React from "react";
 import styled from "styled-components";
-import Playlists from "./Components/Playlists";
-import AdicionarMusicas from "./Components/AdicionarMusicas";
+import AddPlaylist from "./components/AddPlaylist";
+import Playlists from "./components/Playlists";
 
+const AppConteiner = styled.div`
+  background-color: #140951;
+  color: white;
+  margin: 0;
+`;
 
+const Headers = styled.header`
+  background-color: #6f9b3c;
+  color: red;
+  font-size: 40px;
+  height:50px;
+  margin: 0;
+  text-align: center; 
+`;
 
+const Footers = styled.footer`
+  background-color: #6f9b3c;
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  width: 99%;
+  height: 10%;
+  padding-bottom: 0;
+  margin: 0;
+`;
 
+const SocialIcone = styled.img`
+  width: 3%;
+  padding-top: 1%;
+  padding-right: 2%;
+  padding-left: 5%;
+  margin: 0;
+`;
 
-const Background = styled.div`
-    width: 100%;
-    min-height: 100%;
-    background-color: #dd868c;
-    background-repeat: repeat-y;
-    position: absolute;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-`
+class App extends React.Component {
+  state = {
+    currentPage: "addPlaylist"
+  };
 
-
-export default class App extends React.Component {
-    state = {
-        trocarTela: "verPlaylists"
+  changePage = () => {
+    if (this.state.currentPage === "addPlaylist") {
+      this.setState({ currentPage: "playlists" });
+    } else {
+      this.setState({ currentPage: "addPlaylist" });
     }
+  };
 
-    mudaTela = () => {       
-        this.setState({trocarTela: !this.state.trocarTela});
-    }
+  render() {
+    return (
+      <AppConteiner>
+        <Headers>         
+          <strong>Labefy</strong>
+        </Headers>
+        {this.state.currentPage === "addPlaylist" ? (
+          <AddPlaylist changePage={this.changePage} />
+        ) : (
+          <Playlists changePage={this.changePage} />
+        )}
+        <Footers>
+          <SocialIcone src= "/img/Facebook.png" />
+          <SocialIcone src= "/img/Instagram.png" />
+          <SocialIcone src= "/img/Linkedin.png" />
+        </Footers>
+      </AppConteiner>
+    );
+  }
+}
 
-    render () {
-
-      const mudarTela = () => {   
-            if (this.state.trocarTela === "verPlaylists") {
-              return 
-              <Playlists/>
-            } else if (this.state.trocarTela === "verAddMusicas") {
-                return
-                <AdicionarMusicas/>
-            }
-        }
-          return (
-
-                <Background>
-                  
-                    {mudarTela()}
-
-                </Background>
-            );
-        }
-};
+export default App;

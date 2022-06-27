@@ -1,66 +1,199 @@
-import axios from "axios";
 import React from "react";
+import axios from "axios";
+import styled from "styled-components";
 
+const ButtonBackPlaylists = styled.button`
+  font-size: 14px;
+  border-radius: 10px;
+  width: 15%;
+  padding: 10px;
+  margin-bottom: 4%;
+  background-color: red;
+  color: white;
+`;
 
+const TracksContainer = styled.div`
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  text-align: left;
+  margin: 2% 2%;
+  line-height: 80px;
+`;
 
+const ButtonAddTracks = styled.button`
+  font-size: 14px;
+  border-radius: 10px;
+  width: 15%;
+  padding: 10px;
+  margin-bottom: 4%;
+  background-color: red;
+  color: white;
+`;
 
-export default class AdicionarMusicas extends React.Component {
-    state = {
-        listaReproducao: [],
-        musicas: []
-        nome: "",
-        artista: "",
-        urlMusica: "" 
+const DataTracksField = styled.input`
+  width: 25%;
+  padding: 10px;
+  margin-top: 2%;
+`;
+
+const ButtonAddDataTracks = styled.button`
+  font-size: 16px;
+  border-radius: 10px;
+  width: 27%;
+  padding: 10px;
+  margin-top: 2%;
+  background-color: red;
+  color: white;
+`;
+
+const axiosConfig = {
+  headers: {
+    Authorization: "Adriana-Lima-Freire"
+  }
+};
+
+class AdicionarMusicas extends React.Component {
+  state = {
+    playlistDetail: [],
+    playlistEdition: "editButton",
+    name: "",
+    artist: "",
+    url: ""
+  };
+
+  componentDidMount() {
+    this.getPlaylistDetails();
+  }
+
+  getPlaylistDetails = (listId) => {
+    axios
+      .get(
+        `https://us-central1-labenu-apis.cloudfunctions.net/labefy/playlists/${this.props.listId}/tracks`,
+        axiosConfig
+      )
+      .then((response) => {
+        this.setState({ playlistDetail: response.data.result.tracks });
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
+
+  changePlaylistEditonFiel = () => {
+    if (this.state.playlistEdition === "editButton") {
+      this.setState({ playlistEdition: "playlistEditForm" });
+    } else {
+      this.setState({ playlistEdition: "editButton" });
     }
+  };
 
-    handleMusicas = (event) => {
-        this.setState({musicas: event.target.value})
-    }
+  handleNameChange = (event) => {
+    const newNameValue = event.target.value;
 
-    handleNome = (event) => {
-        this.setState({nome: event.target.value})
-    }
+    this.setState({ name: newNameValue });
+  };
 
-    handleUrlMusica = (event) => {
-        this.setState({urlMusica: event.target.value})
-    }
+  handleArtistChange = (event) => {
+    const newArtistValue = event.target.value;
 
-    addTrackToPlaylist = () => {
-        const body = {
-            name: this.state.nome,
-            artist: this.state.artista,
-            url: this.state.urlMusica
+    this.setState({ artist: newArtistValue });
+  };
 
-        }
+  handleUrlChange = (event) => {
+    const newUrlValue = event.target.value;
 
-        axios.post(`https://us-central1-labenu-apis.cloudfunctions.net/labefy/playlists/:playlistId/tracks`, body, {
-            headers: {
-                Authorization: "Adriana-Lima-Freire"
-            }
-        })
-        .then((res) => {
-            this.setState({ nome: ""});
-            this.setState({ artista: ""});
-            this.setState({ urlMusica: ""});
-            alert('Música adicionada com sucesso')
+    this.setState({ url: newUrlValue });
+  };
 
-        })
-        .catch((err) => {
-            console.log(err.message);
-            alert('Não foi possível adicionar a música')
-        })
-    }
+  handleCreatePlaylist = (listId) => {
+    const body = {
+      name: this.state.name,
+      artist: this.state.artist,
+      url: this.state.url
+    };
 
+    axios
+      .post(
+        `https://us-central1-labenu-apis.cloudfunctions.net/labefy/playlists`,
+        body,
+        axiosConfig
+      )
+      .then((response) => {
+        this.setState({ name: "", artist: "", url: "" });
+        this.getPlaylistDetails();
+        this.changePlaylistEditonFiel();
+        alert("Playlist editada com sucesso!");
+        console.log(response);
+      })
+      .catch((error) => {
+        alert("Erro ao editar Playlist!");
+        console.log(error.message);
+      });
+  };
 
-    render() {
-        return (
-            <div>
-                <input
-                placeholder=""
-                value={}
-                onChange={}/>
+  render() {
+    const renderedDetails = this.state.playlistDetail.map((playlist) => {
+      return (
+        <div key={playlist.id}>
+          <p>
+            Artista: {playlist.artist} <br /> Música: {playlist.name}
+          </p>
+          <audio src={playlist.url} value={playlist.url} controls></audio>
+        </div>
+      );
+    });
 
-            </div>
-        )
-    }
+    const playlistEdition =
+      this.state.playlistEdition === "editButton" ? (
+        <ButtonAddTracks onClick={this.changePlaylistEditonFiel}>
+          Adicionar tracks
+        </ButtonAddTracks>
+      ) : (
+        <div>
+          <p>Adicionar tracks a playlist:</p>
+          <DataTracksField
+            placeholder="Nome da música"
+            type="text"
+            value={this.state.name}
+            onChange={this.handleNameChange}
+          />
+          <br />
+
+          <DataTracksField
+            placeholder="Artista"
+            type="text"
+            value={this.state.artist}
+            onChange={this.handleArtistChange}
+          />
+          <br />
+
+          <DataTracksField
+            placeholder="Url"
+            type="url"
+            value={this.state.url}
+            onChange={this.handleUrlChange}
+          />
+          <br />
+
+          <ButtonAddDataTracks onClick={this.handleCreatePlaylist}>
+            Salvar
+          </ButtonAddDataTracks>
+        </div>
+      );
+
+    return (
+      <div>
+        <div>
+          <ButtonBackPlaylists onClick={this.props.changePage}>
+            Voltar as Playlists
+          </ButtonBackPlaylists>
+          <TracksContainer>{renderedDetails}</TracksContainer>
+          <hr />
+        </div>
+        <div>{playlistEdition}</div>
+      </div>
+    );
+  }
 }
+
+export default AdicionarMusicas;
