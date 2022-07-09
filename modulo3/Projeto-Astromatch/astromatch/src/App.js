@@ -1,29 +1,25 @@
-import React, { useState } from "react";
-import './App.css';
+import React from "react";
+import Card from "@material-ui/core/Card";
 import TelaInicial from "./TelaInicial/TelaInicial";
-import TelaMatches from "./TelaMatches/TelaMatches";
-import Header from "./Header/Header";
-function App() {
+import styled from "styled-components";
 
-  const [tela, setTelas] = useState(true);
 
-  const mudarTela = () => {
-    if (tela === true) {
-      return <TelaInicial/>
-    } else if (tela === false) {
-      return <TelaMatches/>
-    }
-  }
-  
-  const onClickMudarTela = () => {
-    setTelas(!tela)
-  };
+const MainContainer = styled(Card)`
+  display: block;
+  border-radius: 3px;
+  width: 400px;
+  height: 600px;
+  margin: 50px;
+  text-align: center;
+`;
 
+function App () {
   return (
-    <div>
-      <Header onClickMudarTela={onClickMudarTela} tela={tela}/>
-      {mudarTela()}
-    </div>
+    <>
+      <MainContainer>
+        <TelaInicial/>
+      </MainContainer>
+    </>
   );
 }
 
