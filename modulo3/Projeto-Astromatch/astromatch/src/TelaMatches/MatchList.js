@@ -18,10 +18,10 @@ function MatchList() {
 
     axios
     .get(
-      "https://us-central1-missao-newton.cloudfunctions.net/astroMatch/Adriana-Lima-Freire/matches"
+      "https://us-central1-missao-newton.cloudfunctions.net/astroMatch/AdrianaLima/matches"
     )
     .then((response) => {
-      console.log(response.data.matches);
+      //console.log(response.data.matches);
       setMatches(response.data.matches);
     })
     .catch((erro) => {
@@ -35,14 +35,15 @@ function MatchList() {
 
   
   return (
-  <>{ getMatches ? 
+    <>
+        { getMatches ? 
     
-    <ListContainer>
-      {matches.map((profile) => {
-        return <MatchItem profile={profile} />;
-      })}
-      <ResetButton />
-    </ListContainer> : <div>Nenhum Match</div>
+      <ListContainer>
+         {matches.map((profile) => {
+         return <MatchItem profile={profile} />;
+         })}
+        <ResetButton />
+      </ListContainer> : <div>Nenhum Match</div>
 }
     </>
   );

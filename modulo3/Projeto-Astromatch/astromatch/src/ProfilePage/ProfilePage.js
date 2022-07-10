@@ -16,7 +16,7 @@ function ProfilePage() {
   const getProfileToChoose = () => {
     axios
       .get(
-        "https://us-central1-missao-newton.cloudfunctions.net/astroMatch/Adriana-Lima-Freire/person"
+        "https://us-central1-missao-newton.cloudfunctions.net/astroMatch/AdrianaLima/person"
       )
       .then((response) => {
         setProfileToChoose(response.data.profile);
@@ -34,7 +34,7 @@ function ProfilePage() {
     setProfileToChoose(undefined);
     axios
       .post(
-        "https://us-central1-missao-newton.cloudfunctions.net/astroMatch/Adriana-Lima-Freire/choose-person",
+        "https://us-central1-missao-newton.cloudfunctions.net/astroMatch/AdrianaLima/choose-person",
         body
       )
       .then((response) => {

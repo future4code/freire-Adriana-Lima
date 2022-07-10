@@ -17,7 +17,7 @@ function ResetButton() {
   useEffect(() => {
     axios
     .get(
-      "https://us-central1-missao-newton.cloudfunctions.net/astroMatch/Adriana-Lima-Freire/matches"
+      "https://us-central1-missao-newton.cloudfunctions.net/astroMatch/AdrianaLima/matches"
     )
     .then((response) => {
       console.log(response.data.matches);
@@ -32,7 +32,7 @@ function ResetButton() {
   const onClickReset = () => {
     axios
       .put(
-        "https://us-central1-missao-newton.cloudfunctions.net/astroMatch/Adriana-Lima-Freire/clear"
+        "https://us-central1-missao-newton.cloudfunctions.net/astroMatch/AdrianaLima/clear"
       )
       .then((resposta) => {
         console.log(resposta.data);

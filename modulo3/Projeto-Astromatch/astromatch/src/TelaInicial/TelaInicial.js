@@ -1,8 +1,8 @@
 //import './App.css';
 import React, { useState } from "react";
-import AppContainer from "./AppContainer/AppContainer";
-import ProfilePage from "./ProfilePage/ProfilePage";
-import TelaMatches from "./TelaMatches/MatchList";
+import AppContainer from "../AppContainer/AppContainer";
+import ProfilePage from "../ProfilePage/ProfilePage";
+import TelaMatches from "../TelaMatches/MatchList";
 
 function TelaInicial () {
   const [selectedPage, setSelectedPage] = useState("choose-profile");
