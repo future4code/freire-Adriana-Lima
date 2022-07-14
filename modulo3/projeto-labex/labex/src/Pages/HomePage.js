@@ -1,4 +1,5 @@
 import React from 'react'
+import { useNavigate } from 'react-router-dom'
 import styled from 'styled-components'
 
 const Home = styled.div`
@@ -25,20 +26,28 @@ z-index: 2;
 
 `
 const Button = styled.button`
-background-color: write;
-color: red;
+/* background-color: write;
+color: red; */
 
 `
 
 const HomePage = () => {
+    const navigate = useNavigate()
+
+    const goToListTrip = () => {
+        navigate('/ListTrip') 
+    }
+    const goToLogin = () => {
+        navigate('/Login') 
+    }
     
     return (
         <Home>
-            <ImgHome src="/img/galaxia1.jpg"/>
+            <ImgHome src="/img/galaxia2.jpg"/>
        
             <ButtonDiv>
-                <Button onClick="ApplicationForm">Inscreva-se em uma viagem</Button>
-                <Button onClick="Login">Painel Administrativo</Button>
+                <button onClick={goToListTrip}>Pacotes de viagens</button>
+                <button onClick={goToLogin}>Painel Administrativo</button>
             </ButtonDiv>
         </Home>
     )
