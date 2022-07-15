@@ -1,21 +1,23 @@
-import React from "react";
+import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { goBack, gotoTripDetails } from "../../Routes/Coordinator";
+import { DivNav, Form, ButtonForm } from "./styled";
 
 const ApplicationForm = () => {
+    const [formTrip, setFormTrip] = useState("")
     const navigate = useNavigate()
 
-    const goBack = () => {
-        navigate('/ListTrip')
+    const onChange = (event) => {
+        setFormTrip(event.target.value)
     }
-    const goToTripDetails = () => {
-        navigate('/Details')
-    }
+
     return (
         <div>
+          <DivNav>
             <h1>Inscreva-se para uma viagem</h1>
-            <form>
+            <Form>
             <select>
-            <option value dissabled selected>Escolha uma viagem</option>
+            <option value="" dissabled selected>Escolha uma viagem</option>
             <option value=""></option> 
             <option value=""></option>     
             <option value=""></option>     
@@ -26,30 +28,40 @@ const ApplicationForm = () => {
             </select>
             
             <input 
-            text={'text'} 
-            placeholder={'Nome'} 
-            name={'nome'} 
-            onChange={'handleInput'}
+              placeholder={'Nome'} 
+              ame={'name'} 
+            //   value={form.name}
+              onChange={onChange}
+
             />
             <input 
-            text={'number'} 
-            placeholder={'Idade'} 
-            name={'idade'} 
-            onChange={'handleInput'}
+              placeholder={'Idade'} 
+              type={'number'} 
+              name={'age'} 
+            //   value={form.age}
+              onChange={onChange}
+              required
+              min={18}
             />
-            <input 
-            text={'text'} 
-            placeholder={'Por que sou um bom candidato?'} 
-            name={''} 
-            onChange={'handleInput'}
+            <input              
+              placeholder={'Por que sou um bom candidato?'} 
+              name={'text'} 
+              onChange={onChange}
+              required
+              pattern={"^.{30,}$"}
+              title={"O texto deve ter no mínimo 30 palavras"}
             />
-            <input 
-            text={'text'} 
-            placeholder={'Profissão'} 
-            name={'profession'}             
-            onChange={'handleInput'}
+            <input        
+              placeholder={'Profissão'} 
+              name={'profession'}             
+              onChange={onChange}
             />
-            <select placeholder='país' name='country' required>
+            <select placeholder={'país'}
+              name={'country'} 
+            //   value={form.country}
+              onChange={onChange}
+              required
+            >
                 <option value disabled selected>Escolha um país</option> 
                 <option value="Afghanistan">Afghanistan</option> 
                 <option value="Albania">Albania</option> 
@@ -255,13 +267,13 @@ const ApplicationForm = () => {
                 <option value="Zimbabue">Zimbabue</option>
                
             </select>
-            <div>
-                <button onClick={goBack}>Voltar</button>
-                <button onClick={goToTripDetails}>Enviar</button>
-            </div>
-            </form>
+            <ButtonForm>
+                <button onClick={() => goBack(navigate)}>Voltar</button>
+                <button onClick={() => gotoTripDetails(navigate)}>Enviar</button>
+            </ButtonForm>
+            </Form>
 
-            
+            </DivNav>  
         </div>
     )
 }
