@@ -1,3 +1,28 @@
+Descrição do Projeto
+
+O LabeX é um site de uma agência de viagens espaciais fictícia. O objetivo era aplicar react-route-dom, criação de formulários com autenticação, sistema para autenticação do usuário.
+
+Recursos
+
+ Ver viagens disponíveis
+ Autenticação de usuários
+ Criar viagens
+ Formulário de aplicação
+ Detalhes de cada viagem
+ Login
+
+ Tecnologias
+
+ Ferramentas usadas na criação do projeto:
+ * React
+ * Styled-Components
+ * Axios
+
+ 
+
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
@@ -68,3 +93,5 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+

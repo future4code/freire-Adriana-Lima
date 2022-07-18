@@ -1,10 +1,12 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
+//import useProtectedPage from "../../Hooks/useProtectedPage";
 import {goToHomePage, goToCreateTrip, logout} from '../../Routes/Coordinator'
 import { ButtonDiv } from "./styled";
 
 
 const AdminHome = () => {
+    //useProtectedPage()
     const navigate = useNavigate()
 
     // const Logout = () => {

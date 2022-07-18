@@ -1,0 +1,7 @@
+"success": true,
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IlRnaEVNb2lia0k2OGtQTGNCNzV6IiwiZW1haWwiOiJhc3Ryb2RldkBnbWFpbC5jb20uYnIiLCJpYXQiOjE2NTc5MjAxMDl9.J9QXNsvCG5Xj5jlmyEsjkd161pcFN7JYswUHPX-NKRs",
+    "user": {
+        "id": "TghEMoibkI68kPLcB75z",
+        "email": "astrodev@gmail.com.br"
+    }
+}

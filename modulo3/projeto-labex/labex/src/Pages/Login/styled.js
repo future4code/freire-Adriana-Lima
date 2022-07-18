@@ -16,7 +16,7 @@ export const DivContainer = styled.div`
 //     position: absolute;
 
 // `
-export const LoginForm = styled.form`
+export const LoginDiv = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: center;

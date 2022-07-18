@@ -1,69 +1,66 @@
-import React, { useState } from "react";
+import React from "react";
+import axios from 'axios';
 import { useNavigate } from "react-router-dom";
-import { goBack, goToAdminHome } from "../../Routes/Coordinator";
-import { ButtonDiv, DivContainer, LoginForm } from "./styled";
+import useForm from '../../Hooks/useForm'
+//import useProtectedPage from "../../Hooks/useProtectedPage";
+import { goToHomePage } from "../../Routes/Coordinator";
+import { ButtonDiv, DivContainer, LoginDiv } from "./styled";
 
+const urlLogin = "https://us-central1-labenu-apis.cloudfunctions.net/labeX/AdrianaLima/login"
 
 const Login = () => {
+    // useProtectedPage()
     const navigate = useNavigate()
-    const [email, setEmail] = useState('')
-    const [password, setPassword] = useState('')
+    const { form, onChange, cleanFields } = useForm({email:"", password:""})
 
-    const onChangeEmail = (event) => {
-        setEmail(event.target.value)
+    const login = (event) => {
+        event.preventDefault()
+        const body = {
+            email: form.email,
+            password: form.password
+        }      
+        axios
+          .post(urlLogin, body)
+          .then((response) => {
+            //localStorange.getItem("token", response.data.token)
+            navigate('/Admin')
+          })
+          .cath((error) => {
+            console.log(error.response)
+            alert("Verifique se os dados estão corretos")
+          })
+          cleanFields()
     }
-    const onChangePassword = (event) => {
-        setPassword(event.target.value)
-    }
-
-    // const login = () => {
-    //     const body = {
-    //         email: email,
-    //         password: password
-    //     }
-        
-    //     axios.post('https://us-central1-labenu-apis.cloudfunctions.net/labeX/AdrianaLima/login', body)
-    //       .then((response) => {
-    //         localStorange.setItem("token, response.data.token")
-    //         navigate.push('/Admin')
-    //       })
-    //       .cath((error) => {
-    //         console.log(error.response)
-    //       })
-    // }
 
     return (
         <DivContainer>
             
-            <LoginForm>
+            <LoginDiv>
             
                 <h1>Login</h1> 
-                         
-                <input
-                value={email}
-                type="email"
-                placeholder='E-mail'
-                name={'email'}             
-                onChange={onChangeEmail}
-                size="35"
-                required pattern=""
-
-                />
-            
-                <input  
-                value={password} 
-                type="password"            
-                placeholder={'Senha'} 
-                name={'senha'}             
-                onChange={onChangePassword}
-                size="35"
-                required 
-                />
-                <ButtonDiv>
-                <button onClick={() => goBack(navigate)}>Home</button>
-                <button onClick={() => goToAdminHome(navigate)}>Entrar</button>
-                </ButtonDiv>
-            </LoginForm>
+                <form onSubmit={login}>       
+                    <input
+                        placeholder={'E-mail'}               
+                        type={"email"}               
+                        name={'email'} 
+                        value={form.email}            
+                        onChange={onChange}
+                        required
+                    />           
+                    <input  
+                        placeholder={'Senha'}                
+                        type="password"                            
+                        name={'password'} 
+                        value={form.password}             
+                        onChange={onChange}
+                        required 
+                    />
+                    <ButtonDiv>
+                        <button onClick={() => goToHomePage(navigate)}>Voltar</button>
+                        <button type={"submit"}>Entrar</button>
+                    </ButtonDiv>
+                </form>
+            </LoginDiv>
             
         </DivContainer>
     )
