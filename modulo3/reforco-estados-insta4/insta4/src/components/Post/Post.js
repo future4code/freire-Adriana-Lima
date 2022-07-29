@@ -8,7 +8,7 @@ import { SecaoComentario } from "../SecaoComentario/SecaoComentario";
 
 const PostContainer = styled.div`
   border: 1px solid gray;
-  width: 300px;
+  width: 400px;
   margin-bottom: 10px;
 `;
 
@@ -17,6 +17,7 @@ const PostHeader = styled.div`
   display: flex;
   align-items: center;
   padding-left: 10px;
+  background-color: white;
 `;
 
 const PostFooter = styled.div`
@@ -25,6 +26,7 @@ const PostFooter = styled.div`
   align-items: center;
   padding: 0 10px;
   justify-content: space-between;
+  background-color: white;
 `;
 
 const UserPhoto = styled.img`
@@ -51,9 +53,7 @@ function Post(props) {
     } else {
       setNumeroCurtidas(numeroCurtidas - 1)
     }
-    
-    // console.log("Curtiu!");
-    
+     
   };
 
   const onClickComentario = () => {
